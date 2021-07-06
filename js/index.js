@@ -1,13 +1,24 @@
 
-// 1
+// 1 Resize Event
+fancyDiv = document.createElement("div");
+fancyDiv.style.width = '200px';
+fancyDiv.style.height = '200px';
+fancyDiv.textContent = 'Fancy Text in my Fancy Div';
+document.body.appendChild(fancyDiv);
 
-// 2
+function reportWindowSize() {
+  fancyDiv.textContent = window.innerHeight;
+
+}
+
+window.onresize = reportWindowSize;
+
+// 2 DBL event
 const card = document.querySelector('.intro img');
 
 card.addEventListener('dblclick', function (e) {
     card.toggleAttribute('hidden');
 });
-
 
 // 3 Window size
 let lastKnownScrollPosition = 0;
